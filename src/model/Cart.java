@@ -35,6 +35,10 @@ public class Cart {
         items.clear();
     }
     public List<CartItem> getItems() {
+        return new ArrayList<>(items);
+    }
+
+    public double calculateTotal() {
         return items.stream().mapToDouble(CartItem::getTotalPrice).sum();
     }
 }
