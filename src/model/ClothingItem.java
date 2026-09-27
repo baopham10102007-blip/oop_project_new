@@ -22,24 +22,12 @@ public abstract class ClothingItem {
         this.color = color;
     }
 
-    public String getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public double getPrice() {
-        return price;
-    }
-    public int getQuantity() {
-        return quantity;
-    }
-    public Size getSize() {
-        return size;
-    }
-    public Color getColor() {
-        return color;
-    }
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public double getPrice() { return price; }
+    public int getQuantity() { return quantity; }
+    public Size getSize() { return size; }
+    public Color getColor() { return color; }
 
     public void setPrice(double price) {
         if (price <= 0) throw new IllegalArgumentException("Giá phải lớn hơn 0");

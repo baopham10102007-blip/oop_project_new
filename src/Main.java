@@ -61,7 +61,7 @@ public class Main {
 
         // Thanh toán qua Ví điện tử
         Payment payment = new EWalletPayment("0987654321");
-        payment.pay(order.calculateTotal());
+        payment.processPayment(order.calculateTotal());
 
         // In Hóa đơn
         Invoice invoice = new Invoice("INV-2026-001", order);
