@@ -19,6 +19,11 @@ public class VipCustomer extends Customer implements Discountable {
     }
 
     @Override
+    public CustomerType getCustomerType() {
+        return CustomerType.VIP;
+    }
+
+    @Override
     public double calculateDiscount(double price) {
         return price * discountRate;
     }

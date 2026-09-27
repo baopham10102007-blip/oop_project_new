@@ -18,7 +18,7 @@ public class Main {
 
         // Đăng ký nhận sự kiện
         eventManager.subscribe(event ->
-                System.out.printf("  📢 [EVENT LOG] %-15s | %s\n", event.getEventType(), event.getMessage())
+                System.out.printf("%-15s | %s\n", event.getEventType(), event.getMessage())
         );
 
        // Khởi tạo ds sản phẩm
@@ -49,6 +49,7 @@ public class Main {
         cart.addItem(s1, 2);
         cart.addItem(p1, 1);
         cart.addItem(j1, 1);
+        cart.displayCart();
 
         Order order = new Order("ORD-2026-001", c2);
         for (CartItem ci : cart.getItems()) {
@@ -72,7 +73,7 @@ public class Main {
         eventManager.publish(new ShopEvent("PAYMENT_SUCCESS", "Thanh toán hóa đơn INV-2026-001 thành công!"));
 
         // Lọc sản phầm
-        System.out.println("--- LỌC SẢN PHẨM CÓ GIÁ > 400.000 VNĐ ---");
+        System.out.println("--- LỌC SẢN PHẨM ĐẮT TIỀN CÓ GIÁ > 400.000 VNĐ ---");
         ProductFilter filter = new ProductFilter();
         var expensiveItems = filter.filter(inventory.getAllItems(), item -> item.getPrice() > 400000);
         expensiveItems.forEach(ClothingItem::displayInfo);
